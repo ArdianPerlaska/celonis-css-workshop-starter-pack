@@ -1,0 +1,13 @@
+// NOTE: It's recommended that you probably include a standardized normalize.css
+// when applying a particular design, but in our test project
+// we don't really need it
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
