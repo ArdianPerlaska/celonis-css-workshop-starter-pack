@@ -18,3 +18,28 @@
 // - Image | Title & Description
 // - Title & Description | Image
 // - Title & Description
+
+.ce-content {
+
+  // modifier
+  &--with-image {
+    display: flex;
+    align-items: center;
+
+    &--right {
+      flex-direction: row-reverse;  
+    }
+  }
+
+  // block elements
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__figure, &__text {
+    flex: 0 0 50%;
+    padding-left: $ce-padding;
+    padding-right: $ce-padding;
+  }
+}
