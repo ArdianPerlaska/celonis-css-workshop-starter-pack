@@ -8,3 +8,76 @@
 // - Top right pattern
 // - Bottom left pattern
 // - Bottom right pattern
+
+$line-pattern-height: 50px;
+$ce-skew-gap: -10deg;
+
+.ce-line-pattern {
+    position: relative;
+
+    // Apply the following style in both
+    // `:before` and `:after`
+    &::before, &::after {
+        content: '';
+        display: block;
+        height: $line-pattern-height;
+        position: absolute;
+        background: $ce-blue;
+        width: 50%;
+        display: none;
+    }
+
+    &--top-left, &--top-right {
+        &::before {
+            display: block;
+        }
+    }
+
+    &--bottom-left, &--bottom-right {
+        &::after {
+            display: block;
+        }
+    }
+
+    // Modifiers
+    // .ce-line-pattern--top-left::before
+    // Top
+    &--top-left {
+        &::before {
+            top: $line-pattern-height/-1;
+            left: 0;
+        }
+    }
+
+    &--top-right {
+        &::before {
+            top: $line-pattern-height/-1;
+            right: 0;
+        }
+    }
+
+    // bottom case
+
+    &--bottom-left {
+        &::after {
+            bottom: $line-pattern-height/-1;
+            left: 0;
+        }
+    }
+
+    &--bottom-right {
+        &::after {
+            bottom: $line-pattern-height/-1;
+            right: 0;
+        }
+    }
+}
+
+.ce-pattern {
+    transform: skewY($ce-skew-gap);
+
+    // block element
+    &__body {
+        transform: skewY($ce-skew-gap/-1);
+    }
+}
