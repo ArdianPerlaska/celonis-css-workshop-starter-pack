@@ -1,6 +1,10 @@
 @import "variables";
+
+// Partials
 @import "partials/normalize";
 @import "partials/layout";
+@import "partials/align";
+@import "partials/colors";
 
 // Tasks
 @import "tasks/task-1";
